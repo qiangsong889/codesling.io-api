@@ -16,6 +16,7 @@ import {
 
 export const signUpController = async (req, res) => {
   try {
+    console.log('just recieved a signup request', req.body)
     req.body.password = await hashPassword(req.body.password)
     const { rows } = await signUpQuery(req.body);
     const { id, email } = rows[0];
@@ -31,6 +32,7 @@ export const signUpController = async (req, res) => {
 
 export const loginController = async (req, res) => {
   try {
+    console.log('just recieved a log in request')
     const { rows } = await loginQuery(req.body);
     delete rows[0].password;
     const { id, email } = rows[0];
