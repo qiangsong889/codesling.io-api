@@ -31,6 +31,7 @@ export const signUpController = async (req, res) => {
 };
 
 export const loginController = async (req, res) => {
+    console.log('just logged in this is the req.user', req.user)
   try {
     console.log('just recieved a log in request')
     const { rows } = await loginQuery(req.body);

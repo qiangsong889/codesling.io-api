@@ -14,3 +14,4 @@ router.route('/:user_id')
   .get(fetchAllUserChallengesController);
 
 export default router;
+  

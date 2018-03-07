@@ -8,6 +8,7 @@ import {
 } from '../../lib/log';
 
 export const addUserChallengeController = async (req, res) => {
+
   try {
     const data = await addUserChallengeQuery(req.body);
     success('addUserChallengeController - successfully added userChallenge ', data);
@@ -18,6 +19,7 @@ export const addUserChallengeController = async (req, res) => {
 };
 
 export const fetchAllUserChallengesController = async (req, res) => {
+  console.log('trying to get all challenge from active user', req.params)
   try {
     const data = await fetchAllUserChallengesQuery(req.params);
     success('fetchAllUserChallengesController - successfully fetched all user challenges ', data);
